@@ -11,3 +11,25 @@ document.querySelectorAll('.menu__list').forEach(n => n.addEventListener('click'
     burger.classList.remove('active')
     menu.classList.remove('active')
 }))
+
+// табы
+/* ------------Табы----------- */
+const tabHeaders = document.querySelectorAll('[data-tab]')
+console.log(tabHeaders);
+const contentBoxes = document.querySelectorAll('[data-tab-content]')
+
+tabHeaders.forEach(function(item) {
+    item.addEventListener('click', function() {
+        tabHeaders.forEach(function(item) {
+            item.classList.remove('active')
+        })   // добавил для кажддого tab при клике убирать и добовлять класс active
+        item.classList.add('active')
+
+    const contentBox = document.querySelector('#' + this.dataset.tab)
+        contentBoxes.forEach(function(item) {
+            item.classList.add('hidden')
+        })
+        contentBox.classList.remove('hidden')
+        
+    })
+})

@@ -321,19 +321,31 @@ h1 {
 }
 .case {
     padding: 100px 0 100px;
+    @media (max-width: 764px) {
+        padding: 50px 0 50px;
+     }
 
 		&__list {
             max-width: 663px;
             justify-content: space-between;
             display: flex;
+            gap: 20px;
             align-items: center;
             margin-bottom: 72px;
+            @media (max-width: 764px) {
+               flex-wrap: wrap;
+               justify-content: center;
+               margin-bottom: 30px;
+            }
 		}
 
 		&__list-item {
             @include tabTitle;
             position: relative;
             cursor: pointer;
+            @media (max-width: 764px) {
+               font-size: 20px;
+            }
             &.active::before {
                 content: '';
                 position: absolute;
@@ -366,39 +378,76 @@ h1 {
 
 		&__content {
             max-width: 35%;
+            @media (max-width: 764px) {
+                max-width: 100%;
+                text-align: center;
+            }
+            .title {
+                @include title;
+                @media (max-width: 1168px) {
+                    font-size: 40px;
+                }
+                @media (max-width: 945px) {
+                    font-size: 30px;
+                }
+            }
+            .text {
+                @media (max-width: 945px) {
+                    font-size: 14px;
+                }
+            
+            }
+            .info {
+                font-size: 14px;
+                line-height: 180%;
+                letter-spacing: 0.2em;
+                color: #677487;
+                margin-bottom: 8px;
+            }
+            .tags {
+                max-width: 400px;
+                display: flex;
+                // flex-wrap: wrap;
+                gap: 20px;
+                // justify-content: space-between;
+                margin-bottom: 40px;
+                @media (max-width: 764px) {
+                    justify-content: center;
+                    max-width: 100%;
+                }
+            }
+            .tags-item {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 180%;
+                color: #1D2736;
+                @media (max-width: 945px) {
+                    font-size: 15px;
+                }
+            }
+            .btn {
+                @include btn;
+                @media (max-width: 945px) {
+                    font-size: 15px;
+                }
+            }
 		}
 
 		&__photo {
+            @media (max-width: 945px) {
+               max-width: 500px;
+            }
+            @media (max-width: 764px) {
+                display: none;
+            }
             img {
                 width: 100%;
                 height: auto;
             }
 		}
 }
-.title {
-    @include title;
-}
-.text {
-}
-.info {
-    font-size: 14px;
-    line-height: 180%;
-    letter-spacing: 0.2em;
-    color: #677487;
-    margin-bottom: 8px;
-}
-.tags {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-.tags-item {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 180%;
-    color: #1D2736;
-}
-.btn {
-    @include btn;
+
+.hidden {
+    display: none;
 }
 
