@@ -1,0 +1,56 @@
+@import './normolaze.css';
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700);
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+a {
+    color: inherit;
+}
+
+.container {
+    max-width: 1195px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ============ Header ============ */
+.header {
+
+    &__btns {
+    }
+}
+.container {
+}
+.header-inner {
+}
+.logo {
+}
+.nav {
+
+    &__menu {
+    }
+
+    &__menu-item {
+    }
+}
+.menu {
+
+    &__link {
+    }
+}
+.btn-sign {
+}
+.dropdown {
+
+    &__list {
+    }
+
+    &__list-item {
+    }
+}
+.burger {
+}
+.bar {
+}
