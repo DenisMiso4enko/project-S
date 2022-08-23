@@ -85,3 +85,17 @@ $gray: #717A90;
     color: $black;
     margin-bottom: 16px;
 }
+
+@mixin prisingBtn {
+    padding: 8px 20px;
+    border: 1px solid #FFD1CA;
+    border-radius: 24px;
+    background: #FFF1EF;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 180%;
+    color: #FF8B7A;
+}
+
+
+
