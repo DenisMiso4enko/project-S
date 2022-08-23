@@ -26,9 +26,26 @@ document.querySelectorAll('.nav__menu').forEach(n => n.addEventListener('click',
     colorBurger()
 }))
 
+// dropDown
+const langBtn = document.querySelector('.btn-lg')
+const dropDown = document.querySelector('.dropdown__list')
+const langList = document.querySelectorAll('.dropdown__list-item')
+
+langBtn.addEventListener('click', function() {
+    dropDown.classList.toggle('active')
+    langBtn.classList.toggle('active')
+})
+langList.forEach((el) => {
+    el.addEventListener('click', function(e) {
+       console.log(e.target.textContent);
+       langBtn.textContent = e.target.textContent
+       dropDown.classList.toggle('active')
+       langBtn.classList.toggle('active')
+    })
+})
+
 // tabs
 const tabHeaders = document.querySelectorAll('[data-tab]')
-console.log(tabHeaders);
 const contentBoxes = document.querySelectorAll('[data-tab-content]')
 
 tabHeaders.forEach(function(item) {
@@ -56,3 +73,6 @@ const swiper = new Swiper('.swiper', {
       prevEl: '.prev__btn',
     },
   });
+
+
+  // prising
