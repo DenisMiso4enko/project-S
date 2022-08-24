@@ -10,8 +10,41 @@
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon_io/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon_io/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+
 </head>
 <body>
+
+     <!-- modal sign up -->
+     <div id="modal" data-modal class="fade-block hidden">
+        <div class="modal-window">
+            <div class="sign-up">
+                <div class="sign-up__header">
+                    Registration Form
+                </div>
+                <form class="sign-form">
+                    <input class="sign-input" type="text" placeholder="First name">
+                    <input class="sign-input" type="text" t placeholder="Lirst name">
+                    <input class="sign-input" type="email" required placeholder="Email">
+                    <input class="sign-input" type="password" required placeholder="Password">
+                    <button class="btn-reg" type="submit">Register</button>
+                </form> 
+            </div>
+        </div>
+    </div>
+
+
     <!-- header -->
     <header class="header">
         <div class="container">
@@ -56,9 +89,10 @@
                 </nav>
 
                 <div class="header__btns">
-                    <button class="btn-sign">Sign up</button>
+                    <button class="btn-sign modal-btn">Sign up</button>
                     <button class="btn-lg">EN</button>
                     <ul class="dropdown__list">
+                        <li class="dropdown__list-item" data-action="lang">EN</li>
                         <li class="dropdown__list-item" data-action="lang">DE</li>
                         <li class="dropdown__list-item" data-action="lang">RU</li>
                         <li class="dropdown__list-item" data-action="lang">FR</li>
@@ -74,6 +108,7 @@
         </div>
     </header>
 
+   
     <!-- main -->
     <main class="main" id="product">
         <div class="container">
@@ -119,7 +154,7 @@
                     </div>
                 </div>
                 <div class="main__photo">
-                    <img src="img/main-img.svg" alt="main">
+                    <img src="img/main-img.jpg" alt="main">
                 </div>
             </div>
         </div>
@@ -152,10 +187,10 @@
                             <li class="tags-item">Copy.ai</li>
                             <li class="tags-item">Hootsuite</li>
                         </ul>
-                        <button class="btn">Sign up</button>
+                        <button class="btn modal-btn">Sign up</button>
                     </div>
                     <div class="case__photo">
-                        <img src="img/tab-img1.svg" alt="case">
+                        <img src="img/tab-img1.png" alt="case">
                     </div>
                 </div>
 
@@ -172,10 +207,10 @@
                             <li class="tags-item">Asana</li>
                             <li class="tags-item">Monday</li>
                         </ul>
-                        <button class="btn">Sign up</button>
+                        <button class="btn modal-btn">Sign up</button>
                     </div>
                     <div class="case__photo">
-                        <img src="img/tab-img2.svg" alt="case">
+                        <img src="img/tab-img2.png" alt="case">
                     </div>
                 </div>
 
@@ -193,10 +228,10 @@
                             <li class="tags-item">Zapier</li>
                             <li class="tags-item">Airtable</li>
                         </ul>
-                        <button class="btn">Sign up</button>
+                        <button class="btn modal-btn">Sign up</button>
                     </div>
                     <div class="case__photo">
-                        <img src="img/tab-img3.svg" alt="case">
+                        <img src="img/tab-img3.png" alt="case">
                     </div>
                 </div>
 
@@ -214,10 +249,10 @@
                             <li class="tags-item">MS Teams</li>
                             <li class="tags-item">Whatsapp</li>
                         </ul>
-                        <button class="btn">Sign up</button>
+                        <button class="btn modal-btn">Sign up</button>
                     </div>
                     <div class="case__photo">
-                        <img src="img/tab-img4.svg" alt="case">
+                        <img src="img/tab-img4.png" alt="case">
                     </div>
                 </div>
 
@@ -235,10 +270,10 @@
                             <li class="tags-item">Malt</li>
                             <li class="tags-item">Fiverr</li>
                         </ul>
-                        <button class="btn">Sign up</button>
+                        <button class="btn modal-btn">Sign up</button>
                     </div>
                     <div class="case__photo">
-                        <img src="img/tab-img5.svg" alt="case">
+                        <img src="img/tab-img5.png" alt="case">
                     </div>
                 </div>
             </div>
@@ -249,7 +284,7 @@
     <section class="section-learn" id="learn">
         <div class="container">
             <div class="learn">
-                <div class="learn__left">
+                <div class="learn__left" >
                     <h2 class="title">
                         stop <span>selling yourself.</span>
                     </h2>
@@ -311,7 +346,7 @@
                             Unlimited meeting
                         </button>
                     </div>
-                    <button class="btn">Sign up</button>
+                    <button class="btn modal-btn">Sign up</button>
                 </div>
                 <div class="pricing__price">
                     <div class="price-wrapper">
@@ -581,8 +616,9 @@
         </div>
     </footer>
 
-
-      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+   
 </body>
 </html>

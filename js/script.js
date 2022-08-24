@@ -75,4 +75,26 @@ const swiper = new Swiper('.swiper', {
   });
 
 
-  // prising
+// prising
+
+
+
+// modal sign up 
+const buttonsSign = document.querySelectorAll('.modal-btn') 
+const fadeBlock = document.querySelector('#modal')
+const fade = document.querySelector('.fade-block')
+buttonsSign.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        fadeBlock.classList.remove('hidden')
+        body.classList.toggle('stopscroll')
+        fade.addEventListener('click', function() {
+        fade.classList.add('hidden')
+        body.classList.remove('stopscroll')
+    })
+    })
+})
+
+
+fade.querySelector('.modal-window').addEventListener('click', function(event) {
+    event.stopPropagation()
+})

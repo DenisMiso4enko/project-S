@@ -5,6 +5,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+   
 }
 
 html {
@@ -35,21 +36,22 @@ a {
         }
         .dropdown {
             &__list {
-                opacity: 0;
+                z-index: 6;
+                display: none;
                 position: absolute;
                 right: -20px;
-                bottom: -100px;
+                bottom: -185px;
                 background: #FFF0EC;
                 border-radius: 12px;
                 transition: .4s;
                 &.active {
-                    opacity: 1;
+                    display: block;
                 }
             }
             
             &__list-item {
                 cursor: pointer;
-                padding: 10px;
+                padding: 15px 10px;
                 transition: .3s;
                 &:hover {
                     background: $orange;
@@ -125,7 +127,7 @@ a {
     @include headerBtn;
     @media (max-width: 425px) {
         padding: 10px 20px;
-        font-size: 14px;
+        // font-size: 14px;
     }
 }
 .btn-lg {
@@ -181,6 +183,56 @@ a {
     }
 }
 
+/* =============== Modal Sign Up ================= */
+.fade-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top left, powderblue, pink);
+    z-index: 12;
+}
+
+.modal-window {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #F9F7FC;
+    border-radius: 24px;
+    overflow: hidden; 
+}
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    &__header {
+        @include title;
+        color: white;
+        font-size: 40px;
+        padding: 20px 20px;
+        text-align: center;
+        background: $orange;
+        @media (max-width: 425px) {
+           font-size: 30px;
+        }
+    }
+}
+.sign-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+}
+.sign-input {
+    @include input;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+.btn-reg {
+    @include btn;
+    margin-top: 24px;
+}
 
 /* ========= Main ======== */
 
@@ -193,12 +245,11 @@ a {
     &__content {
         // max-width: 412px;
         flex: 0 0 40%;
-        @media (max-width: 880px) {
-        
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
         }
 
     }
-
     &__rating {
         display: flex;
         gap: 15px;
@@ -213,13 +264,11 @@ a {
             color: #677487;   
         }
     }
-
     &__partners {
         display: flex;
         justify-content: space-between;
         
     }
-
     &__partners-item {
         max-width: 87px;
         @media (max-width: 425px) {
@@ -230,7 +279,6 @@ a {
             height: auto;
         }
     }
-
     &__photo {
         max-width: 100%;
         @media (max-width: 1174px) {
@@ -240,8 +288,14 @@ a {
             max-width: 400px;
         }
         @media (max-width: 880px) {
-            max-width: 100%;
+            max-width: 330px;
         }
+        @media (max-width: 767px) {
+            max-width: 80%;
+         }
+         @media (max-width: 425px) {
+            max-width: 100%;
+         }
         img {
             width: 100%;
             height: auto;
@@ -253,7 +307,7 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 60px;
-    @media (max-width: 880px) {
+    @media (max-width: 767px) {
        flex-direction: column;
     }
 }
@@ -262,7 +316,7 @@ h1 {
     @media (max-width: 1174px) {
         font-size: 45px;
     }
-    @media (max-width: 880px) {
+    @media (max-width: 767px) {
         max-width: 100%;
         text-align: center;
     }
@@ -302,7 +356,6 @@ h1 {
     @media (max-width: 425px) {
         padding: 10px 20px;
     }
-
 }
 .form__btns {
     display: flex;
@@ -426,9 +479,8 @@ h1 {
             .tags {
                 max-width: 400px;
                 display: flex;
-                // flex-wrap: wrap;
                 gap: 20px;
-                // justify-content: space-between;
+                z-index: 6;
                 margin-bottom: 40px;
                 @media (max-width: 764px) {
                     justify-content: center;
@@ -440,8 +492,10 @@ h1 {
                 font-size: 18px;
                 line-height: 180%;
                 color: #1D2736;
+                z-index: 6;
                 @media (max-width: 945px) {
                     font-size: 15px;
+
                 }
             }
             .btn {
@@ -816,7 +870,7 @@ h1 {
     position: relative;
     padding: 537px 0 80px;
     @media (max-width: 600px) {
-        padding: 600px 0 60px;
+        padding: 700px 0 60px;
     }
     &__form {
         position: absolute;
@@ -864,7 +918,9 @@ h1 {
                         color: $black;
                     }
                     .input {
+                        @include input;
                         margin-top: 16px;
+                        font-size: 18px;
                         width: 100%;
                     }
                     .btn {
@@ -966,14 +1022,3 @@ h1 {
         }
     }
 }
-
-/* 
-FIXME: заменить картинки
-FIXME: сделать табы для prising
-FIXME: добавить favicon
-FIXME: может изменить адаптив к main
-FIXME: добавить анимацуию секциям
-FIXME: модалка для кнопок sign up
-
-*/
-

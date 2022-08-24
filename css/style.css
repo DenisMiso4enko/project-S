@@ -36,20 +36,21 @@ a {
   }
 }
 .header__btns .dropdown__list {
-  opacity: 0;
+  z-index: 6;
+  display: none;
   position: absolute;
   right: -20px;
-  bottom: -100px;
+  bottom: -185px;
   background: #FFF0EC;
   border-radius: 12px;
   transition: 0.4s;
 }
 .header__btns .dropdown__list.active {
-  opacity: 1;
+  display: block;
 }
 .header__btns .dropdown__list-item {
   cursor: pointer;
-  padding: 10px;
+  padding: 15px 10px;
   transition: 0.3s;
 }
 .header__btns .dropdown__list-item:hover {
@@ -128,7 +129,6 @@ a {
 @media (max-width: 425px) {
   .btn-sign {
     padding: 10px 20px;
-    font-size: 14px;
   }
 }
 
@@ -186,6 +186,100 @@ a {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+/* =============== Modal Sign Up ================= */
+.fade-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top left, powderblue, pink);
+  z-index: 12;
+}
+
+.modal-window {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #F9F7FC;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+}
+.sign-up__header {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: #1D2736;
+  margin-bottom: 24px;
+  color: white;
+  font-size: 40px;
+  padding: 20px 20px;
+  text-align: center;
+  background: #F0998D;
+}
+.sign-up__header span {
+  color: #F0998D;
+}
+@media (max-width: 425px) {
+  .sign-up__header {
+    font-size: 30px;
+  }
+}
+
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+}
+
+.sign-input {
+  background: #F7F9FD;
+  border: 1px solid #DFE8FA;
+  border-radius: 15px;
+  padding: 24px 32px;
+  padding: 15px 20px;
+  font-size: 20px;
+}
+.sign-input::-moz-placeholder {
+  font-size: 18px;
+  line-height: 180%;
+  color: #677487;
+}
+.sign-input:-ms-input-placeholder {
+  font-size: 18px;
+  line-height: 180%;
+  color: #677487;
+}
+.sign-input::placeholder {
+  font-size: 18px;
+  line-height: 180%;
+  color: #677487;
+}
+.sign-input:focus {
+  border: 1px solid #38a9f0;
+  box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+}
+
+.btn-reg {
+  padding: 16px 35px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
+  background: #F0998D;
+  box-shadow: 0px 16px 40px rgba(255, 188, 166, 0.33);
+  border-radius: 15px;
+  margin-top: 24px;
+}
+
 /* ========= Main ======== */
 .main {
   padding: 61px 0 140px;
@@ -197,6 +291,11 @@ a {
 }
 .main__content {
   flex: 0 0 40%;
+}
+@media (max-width: 767px) {
+  .main__content {
+    flex: 0 0 100%;
+  }
 }
 .main__rating {
   display: flex;
@@ -245,6 +344,16 @@ a {
 }
 @media (max-width: 880px) {
   .main__photo {
+    max-width: 330px;
+  }
+}
+@media (max-width: 767px) {
+  .main__photo {
+    max-width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .main__photo {
     max-width: 100%;
   }
 }
@@ -259,7 +368,7 @@ a {
   align-items: center;
   gap: 60px;
 }
-@media (max-width: 880px) {
+@media (max-width: 767px) {
   .main-inner {
     flex-direction: column;
   }
@@ -283,7 +392,7 @@ h1 span {
     font-size: 45px;
   }
 }
-@media (max-width: 880px) {
+@media (max-width: 767px) {
   h1 {
     max-width: 100%;
     text-align: center;
@@ -324,7 +433,7 @@ h1 span {
 }
 
 .form-btn {
-  padding: 16px 37px;
+  padding: 16px 35px;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
@@ -489,6 +598,7 @@ h1 span {
   max-width: 400px;
   display: flex;
   gap: 20px;
+  z-index: 6;
   margin-bottom: 40px;
 }
 @media (max-width: 764px) {
@@ -502,6 +612,7 @@ h1 span {
   font-size: 18px;
   line-height: 180%;
   color: #1D2736;
+  z-index: 6;
 }
 @media (max-width: 945px) {
   .case__content .tags-item {
@@ -509,7 +620,7 @@ h1 span {
   }
 }
 .case__content .btn {
-  padding: 16px 37px;
+  padding: 16px 35px;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
@@ -743,7 +854,7 @@ h1 span {
   }
 }
 .pricing__content .btn {
-  padding: 16px 37px;
+  padding: 16px 35px;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
@@ -948,7 +1059,7 @@ h1 span {
 }
 @media (max-width: 600px) {
   .footer {
-    padding: 600px 0 60px;
+    padding: 700px 0 60px;
   }
 }
 .footer__form {
@@ -1012,11 +1123,35 @@ h1 span {
   color: #1D2736;
 }
 .footer__form .subscribe__form .input {
+  background: #F7F9FD;
+  border: 1px solid #DFE8FA;
+  border-radius: 15px;
+  padding: 24px 32px;
   margin-top: 16px;
+  font-size: 18px;
   width: 100%;
 }
+.footer__form .subscribe__form .input::-moz-placeholder {
+  font-size: 18px;
+  line-height: 180%;
+  color: #677487;
+}
+.footer__form .subscribe__form .input:-ms-input-placeholder {
+  font-size: 18px;
+  line-height: 180%;
+  color: #677487;
+}
+.footer__form .subscribe__form .input::placeholder {
+  font-size: 18px;
+  line-height: 180%;
+  color: #677487;
+}
+.footer__form .subscribe__form .input:focus {
+  border: 1px solid #38a9f0;
+  box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+}
 .footer__form .subscribe__form .btn {
-  padding: 16px 37px;
+  padding: 16px 35px;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
@@ -1110,13 +1245,3 @@ h1 span {
     font-size: 15px;
   }
 }
-
-/* 
-FIXME: заменить картинки
-FIXME: сделать табы для prising
-FIXME: добавить favicon
-FIXME: может изменить адаптив к main
-FIXME: добавить анимацуию секциям
-FIXME: модалка для кнопок sign up
-
-*/
