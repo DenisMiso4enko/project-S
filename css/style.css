@@ -195,6 +195,7 @@ a {
   bottom: 0;
   background: linear-gradient(to top left, powderblue, pink);
   z-index: 12;
+  padding: 10px;
 }
 
 .modal-window {
@@ -244,7 +245,7 @@ a {
   background: #F7F9FD;
   border: 1px solid #DFE8FA;
   border-radius: 15px;
-  padding: 24px 32px;
+  padding: 20px 30px;
   padding: 15px 20px;
   font-size: 20px;
 }
@@ -1126,7 +1127,7 @@ h1 span {
   background: #F7F9FD;
   border: 1px solid #DFE8FA;
   border-radius: 15px;
-  padding: 24px 32px;
+  padding: 20px 30px;
   margin-top: 16px;
   font-size: 18px;
   width: 100%;
@@ -1149,6 +1150,21 @@ h1 span {
 .footer__form .subscribe__form .input:focus {
   border: 1px solid #38a9f0;
   box-shadow: 0px 0px 5px rgba(56, 169, 240, 0.75);
+}
+@media (max-width: 767px) {
+  .footer__form .subscribe__form .input {
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+  .footer__form .subscribe__form .input::-moz-placeholder {
+    font-size: 16px;
+  }
+  .footer__form .subscribe__form .input:-ms-input-placeholder {
+    font-size: 16px;
+  }
+  .footer__form .subscribe__form .input::placeholder {
+    font-size: 16px;
+  }
 }
 .footer__form .subscribe__form .btn {
   padding: 16px 35px;

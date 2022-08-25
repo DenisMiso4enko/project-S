@@ -73,11 +73,7 @@ const swiper = new Swiper('.swiper', {
       prevEl: '.prev__btn',
     },
   });
-
-
-// prising
-
-
+  
 
 // modal sign up 
 const buttonsSign = document.querySelectorAll('.modal-btn') 
