@@ -24,6 +24,14 @@ a {
 }
 
 /* ============ Header ============ */ /* FIXMI: доделать select */
+.header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+}
 .header__btns {
   display: flex;
   gap: 16px;
@@ -107,6 +115,9 @@ a {
   transition: 0.4s;
 }
 .menu__link:hover {
+  color: #1D2736;
+}
+.menu__link.active {
   color: #1D2736;
 }
 @media (max-width: 880px) {
@@ -283,7 +294,7 @@ a {
 
 /* ========= Main ======== */
 .main {
-  padding: 61px 0 140px;
+  padding: 170px 0 140px;
 }
 @media (max-width: 425px) {
   .main {

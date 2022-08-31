@@ -37,7 +37,6 @@ langBtn.addEventListener('click', function() {
 })
 langList.forEach((el) => {
     el.addEventListener('click', function(e) {
-       console.log(e.target.textContent);
        langBtn.textContent = e.target.textContent
        dropDown.classList.toggle('active')
        langBtn.classList.toggle('active')
@@ -93,4 +92,40 @@ buttonsSign.forEach((btn) => {
 
 fade.querySelector('.modal-window').addEventListener('click', function(event) {
     event.stopPropagation()
+})
+
+
+
+// scroll
+const sections = document.querySelectorAll('.section')
+const links = document.querySelectorAll('.menu__link')
+const menuList = document.querySelector('.nav__menu')
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            links.forEach((link) => {
+                if (link.getAttribute('href').replace('#', '') === entry.target.id) {
+                    link.classList.add('active')
+                } else {
+                    link.classList.remove('active')
+                }
+               
+            })
+        }
+    })
+}, {
+    threshold: 0.2,
+})
+sections.forEach((section) => observer.observe(section))
+
+menuList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('menu__link')) {
+        e.preventDefault()
+        const id = e.target.getAttribute('href').replace('#', '')
+        window.scrollTo({
+            top: document.getElementById(id).offsetTop,
+            behavior: "smooth",
+        })
+    }
 })
