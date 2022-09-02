@@ -24,7 +24,7 @@ a {
     padding: 0 15px;
 }
 
-/* ============ Header ============ */ /* FIXMI: доделать select */
+/* ============ Header ============ */
 .header {
     background: #fff;
     position: fixed;
@@ -208,10 +208,17 @@ a {
     position: absolute;
     left: 50%;
     top: 50%;
+    width: 600px;
     transform: translate(-50%, -50%);
     background: #F9F7FC;
     border-radius: 24px;
     overflow: hidden; 
+    @media (max-width: 768px) {
+        width: 400px;
+    }
+    @media (max-width: 425px) {
+        width: 300px;
+    }
 }
 .sign-up {
     display: flex;
@@ -249,7 +256,7 @@ a {
 .main {
     padding: 170px 0 140px;
     @media (max-width: 425px) {
-        padding: 30px 0 60px;
+        padding: 120px 0 60px;
     }
 
     &__content {
@@ -404,8 +411,8 @@ h1 {
 .case {
     padding: 100px 0 100px;
     @media (max-width: 764px) {
-        padding: 50px 0 50px;
-     }
+        padding: 100px 0 50px;
+    }
 
 		&__list {
             max-width: 663px;
@@ -540,9 +547,8 @@ h1 {
     margin: 40px 0 40px;
     background: #F9F7FC;
     @media (max-width: 623px) {
-        padding: 50px 0 50px;
+        padding: 100px 0 50px;
     }
-    
 }
 .learn {
     display: flex;
@@ -634,10 +640,9 @@ h1 {
     justify-content: space-between;
     align-items: center;
     @media (max-width: 800px) {
+        padding: 100px 0 50px;
         flex-wrap: wrap;
     }
-    
-
 		&__content {
             flex: 0 1 50%;
             @media (max-width: 800px) {
@@ -772,7 +777,7 @@ h1 {
         margin-top: 40px;
         padding: 160px 0 470px;
         @media (max-width: 940px) {
-            padding: 30px 0 470px;
+            padding: 60px 0 470px;
         }
     }
 }
